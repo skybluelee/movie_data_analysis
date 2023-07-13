@@ -3,6 +3,7 @@
 ## **목차**
 - [개요](#개요)
 - [프로젝트 상세](#프로젝트-상세)
+  - [데이터 선정](#데이터-선정)
 
 ## **개요**
 
@@ -20,4 +21,6 @@
 
 ## 프로젝트 상세
 프로젝트의 방향과 수행 과정에 대해 설명
-데이터는 Kaggle의 IMDb Review Dataset을 사용.
+
+### 데이터 선정
+데이터는 Kaggle의 [IMDb Review Dataset](https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset)을 사용.
