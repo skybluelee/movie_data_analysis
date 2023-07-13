@@ -19,8 +19,12 @@
 >
 > **사용 기술:** Python, Spark, Kafka
 
-## 프로젝트 상세
-프로젝트의 방향과 수행 과정에 대해 설명
+## **프로젝트 상세**
+프로젝트 진행 과정에 대한 설명
 
 ### 데이터 선정
+Kafka producer가 consumer로 전송할 데이터를 영화 리뷰 데이터로 선정. 영화 리뷰 데이터에는 리뷰 수집 날짜가 나와있고 평가 점수와 리뷰를 통해 다양한 분석이 가능하다고 판단하여 이와 같이 결정.
+
 데이터는 Kaggle의 [IMDb Review Dataset](https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset)을 사용.
+
+### 원본 데이터 분석
