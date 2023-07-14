@@ -37,3 +37,5 @@ Kafka producer가 consumer로 전송할 데이터를 영화 리뷰 데이터로 
 ![aa](https://github.com/skybluelee/movie_data_analysis/assets/107929903/e7e79129-d5b1-4784-a6b0-858e2aa52321)
 
 모든 데이터에서 년, 월, 일(10일 단위)로 파티셔닝한 상태로 저장.
+
+### 실시간 ETL 구축
