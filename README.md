@@ -34,7 +34,7 @@ Kafka producer가 consumer로 전송할 데이터를 영화 리뷰 데이터로 
 
 실시간 데이터 분석에 모든 데이터를 사용할 필요가 없다고 판단하여 데이터의 양이 많은 2019~2021년에 해당하는 리뷰만을 사용하기로 결정.
 
-<img src="https://github.com/skybluelee/movie_data_analysis/assets/107929903/e7e79129-d5b1-4784-a6b0-858e2aa52321.png" width="900" height="300"/>
+<img src="https://github.com/skybluelee/movie_data_analysis/assets/107929903/e7e79129-d5b1-4784-a6b0-858e2aa52321.png" width="800" height="200"/>
 
 모든 데이터에서 년, 월, 일(10일 단위)로 파티셔닝한 상태로 저장.
 
