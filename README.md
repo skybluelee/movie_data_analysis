@@ -31,5 +31,6 @@ Kafka producer가 consumer로 전송할 데이터를 영화 리뷰 데이터로 
 ![year](https://github.com/skybluelee/movie_data_analysis/assets/107929903/55e3a877-7702-4f2d-8057-e4eac6312730)
 
 영화 데이터는 6개의 json file로 구성되며 각 파일의 연도는 위와 같다.
+
 실시간 데이터 분석에 모든 데이터를 사용할 필요가 없다고 판단하여 데이터의 양이 많은 2019~2021년에 해당하는 리뷰만을 사용하기로 결정.
 해당 년도의 각 월로 데이터를 저장.
