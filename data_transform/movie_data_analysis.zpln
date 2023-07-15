@@ -1,0 +1,732 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "%md\n# HDFS에서 영화 데이터 다운로드",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-14T14:05:09+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 14,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h1>HDFS에서 영화 데이터 다운로드</h1>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689169710738_217704039",
+      "id": "paragraph_1689169710738_217704039",
+      "dateCreated": "2023-07-12T13:48:30+0000",
+      "dateStarted": "2023-07-14T14:05:09+0000",
+      "dateFinished": "2023-07-14T14:05:12+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:3524"
+    },
+    {
+      "text": "%pyspark\r\ndf1 = spark.read \\\r\n           .option(\"header\", \"true\") \\\r\n           .option(\"inferSchema\", \"false\") \\\r\n           .csv(\"hdfs://spark-master-01:9000/skybluelee/movie/part-01.csv\") \r\n\r\ndf2 = spark.read \\\r\n           .option(\"header\", \"true\") \\\r\n           .option(\"inferSchema\", \"false\") \\\r\n           .csv(\"hdfs://spark-master-01:9000/skybluelee/movie/part-02.csv\")\r\n            \r\ndf3 = spark.read \\\r\n           .option(\"header\", \"true\") \\\r\n           .option(\"inferSchema\", \"false\") \\\r\n           .csv(\"hdfs://spark-master-01:9000/skybluelee/movie/part-03.csv\")\r\n            \r\ndf4 = spark.read \\\r\n           .option(\"header\", \"true\") \\\r\n           .option(\"inferSchema\", \"false\") \\\r\n           .csv(\"hdfs://spark-master-01:9000/skybluelee/movie/part-04.csv\")\r\n            \r\ndf5 = spark.read \\\r\n           .option(\"header\", \"true\") \\\r\n           .option(\"inferSchema\", \"false\") \\\r\n           .csv(\"hdfs://spark-master-01:9000/skybluelee/movie/part-05.csv\")\r\n            \r\ndf6 = spark.read \\\r\n           .option(\"header\", \"true\") \\\r\n           .option(\"inferSchema\", \"false\") \\\r\n           .csv(\"hdfs://spark-master-01:9000/skybluelee/movie/part-06.csv\")            ",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-14T14:05:12+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 12,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://spark-master-01:4040/jobs/job?id=0",
+              "$$hashKey": "object:3749"
+            },
+            {
+              "jobUrl": "http://spark-master-01:4040/jobs/job?id=1",
+              "$$hashKey": "object:3750"
+            },
+            {
+              "jobUrl": "http://spark-master-01:4040/jobs/job?id=2",
+              "$$hashKey": "object:3751"
+            },
+            {
+              "jobUrl": "http://spark-master-01:4040/jobs/job?id=3",
+              "$$hashKey": "object:3752"
+            },
+            {
+              "jobUrl": "http://spark-master-01:4040/jobs/job?id=4",
+              "$$hashKey": "object:3753"
+            },
+            {
+              "jobUrl": "http://spark-master-01:4040/jobs/job?id=5",
+              "$$hashKey": "object:3754"
+            }
+          ],
+          "interpreterSettingId": "spark_yarn"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689169823671_1939255",
+      "id": "paragraph_1689169823671_1939255",
+      "dateCreated": "2023-07-12T13:50:23+0000",
+      "dateStarted": "2023-07-14T14:05:12+0000",
+      "dateFinished": "2023-07-14T14:06:33+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:3525"
+    },
+    {
+      "text": "%md\n# 데이터 타입 변경",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-14T14:06:34+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true,
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h1>데이터 타입 변경</h1>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689177725810_521365502",
+      "id": "paragraph_1689177725810_521365502",
+      "dateCreated": "2023-07-12T16:02:05+0000",
+      "dateStarted": "2023-07-14T14:06:34+0000",
+      "dateFinished": "2023-07-14T14:06:34+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:3526"
+    },
+    {
+      "text": "%pyspark\nfrom pyspark.sql.functions import *\nfrom pyspark.sql.types import IntegerType\n\ndf1 = df1.withColumn('rating', col('rating').cast(IntegerType()))\\\n         .withColumn('spoiler_tag', col('spoiler_tag').cast(IntegerType()))\\\n         .withColumn(\"review_date\",to_timestamp(\"review_date\"))\n         \ndf2 = df2.withColumn('rating', col('rating').cast(IntegerType()))\\\n         .withColumn('spoiler_tag', col('spoiler_tag').cast(IntegerType()))\\\n         .withColumn(\"review_date\",to_timestamp(\"review_date\"))\n         \ndf3 = df3.withColumn('rating', col('rating').cast(IntegerType()))\\\n         .withColumn('spoiler_tag', col('spoiler_tag').cast(IntegerType()))\\\n         .withColumn(\"review_date\",to_timestamp(\"review_date\"))\n         \ndf4 = df4.withColumn('rating', col('rating').cast(IntegerType()))\\\n         .withColumn('spoiler_tag', col('spoiler_tag').cast(IntegerType()))\\\n         .withColumn(\"review_date\",to_timestamp(\"review_date\"))\n         \ndf5 = df5.withColumn('rating', col('rating').cast(IntegerType()))\\\n         .withColumn('spoiler_tag', col('spoiler_tag').cast(IntegerType()))\\\n         .withColumn(\"review_date\",to_timestamp(\"review_date\"))\n         \ndf6 = df6.withColumn('rating', col('rating').cast(IntegerType()))\\\n         .withColumn('spoiler_tag', col('spoiler_tag').cast(IntegerType()))\\\n         .withColumn(\"review_date\",to_timestamp(\"review_date\"))         \n         \n           \ndf1.createOrReplaceTempView(\"part_01\")\ndf2.createOrReplaceTempView(\"part_02\")\ndf3.createOrReplaceTempView(\"part_03\")\ndf4.createOrReplaceTempView(\"part_04\")\ndf5.createOrReplaceTempView(\"part_05\")\ndf6.createOrReplaceTempView(\"part_06\")         ",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-14T14:06:34+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 12,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689176710033_1097772004",
+      "id": "paragraph_1689176710033_1097772004",
+      "dateCreated": "2023-07-12T15:45:10+0000",
+      "dateStarted": "2023-07-14T14:06:34+0000",
+      "dateFinished": "2023-07-14T14:06:34+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:3527"
+    },
+    {
+      "text": "%pyspark\ndf1.printSchema()",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-14T14:06:34+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 12,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- review_id: string (nullable = true)\n |-- reviewer: string (nullable = true)\n |-- movie: string (nullable = true)\n |-- rating: integer (nullable = true)\n |-- review_summary: string (nullable = true)\n |-- review_date: timestamp (nullable = true)\n |-- spoiler_tag: integer (nullable = true)\n |-- review_detail: string (nullable = true)\n |-- helpful: string (nullable = true)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689169758445_1016669746",
+      "id": "paragraph_1689169758445_1016669746",
+      "dateCreated": "2023-07-12T13:49:18+0000",
+      "dateStarted": "2023-07-14T14:06:34+0000",
+      "dateFinished": "2023-07-14T14:06:34+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:3528"
+    },
+    {
+      "text": "%md\n# 각 파일의 데이터 확인",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-14T14:06:34+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h1>각 파일의 데이터 확인</h1>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689314041340_574193893",
+      "id": "paragraph_1689314041340_574193893",
+      "dateCreated": "2023-07-14T05:54:01+0000",
+      "dateStarted": "2023-07-14T14:06:34+0000",
+      "dateFinished": "2023-07-14T14:06:34+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:3529"
+    },
+    {
+      "text": "%pyspark\ndf_year_check= spark.sql(\"\"\"\n                            SELECT SUBSTR(review_date, 1, 4) AS Year, COUNT(*) AS review_count\n                            FROM   part_06\n                            GROUP  BY Year\n                            ORDER  BY 1 DESC\n                         \"\"\") \\\n                    .show(100)",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-14T14:06:35+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 12,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 336,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----+------------+\n|Year|review_count|\n+----+------------+\n|2005|       32999|\n|2004|       61198|\n|2003|      110432|\n|2002|      109584|\n|2001|       82160|\n|2000|       53802|\n|1999|       42426|\n|1998|        7395|\n|null|           1|\n+----+------------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://spark-master-01:4040/jobs/job?id=6",
+              "$$hashKey": "object:3828"
+            },
+            {
+              "jobUrl": "http://spark-master-01:4040/jobs/job?id=7",
+              "$$hashKey": "object:3829"
+            }
+          ],
+          "interpreterSettingId": "spark_yarn"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689210705347_1499647406",
+      "id": "paragraph_1689210705347_1499647406",
+      "dateCreated": "2023-07-13T01:11:45+0000",
+      "dateStarted": "2023-07-14T14:06:35+0000",
+      "dateFinished": "2023-07-14T14:06:41+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:3530"
+    },
+    {
+      "text": "%md\n# 2019~2021년에 해당하는 데이터를 해당 년도의 데이터만 존재하도록 설정",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-14T14:06:41+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h1>2019~2021년에 해당하는 데이터를 해당 년도의 데이터만 존재하도록 설정</h1>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689314073988_1407220877",
+      "id": "paragraph_1689314073988_1407220877",
+      "dateCreated": "2023-07-14T05:54:33+0000",
+      "dateStarted": "2023-07-14T14:06:41+0000",
+      "dateFinished": "2023-07-14T14:06:41+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:3531"
+    },
+    {
+      "text": "%pyspark\ndf_01 = spark.sql(\"\"\"\n                     SELECT  *, YEAR(review_date) AS YEAR, MONTH(review_date) AS MONTH,\n                             CASE WHEN DAY(review_date) BETWEEN 1 AND 10 THEN '1_10'\n                                  WHEN DAY(review_date) BETWEEN 11 AND 20 THEN '11_20'\n                                  ELSE '21_31' END AS DAY\n                     FROM    part_01\n                     WHERE   YEAR(review_date) IN (2019, 2020, 2021)\n                 \"\"\")\n                      \ndf_02 = spark.sql(\"\"\"\n                     SELECT  *, YEAR(review_date) AS YEAR, MONTH(review_date) AS MONTH,\n                             CASE WHEN DAY(review_date) BETWEEN 1 AND 10 THEN '1_10'\n                                  WHEN DAY(review_date) BETWEEN 11 AND 20 THEN '11_20'\n                                  ELSE '21_31' END AS DAY\n                     FROM    part_02\n                     WHERE   YEAR(review_date) IN (2019, 2020, 2021)\n                 \"\"\")\n                      \ndf_03 = spark.sql(\"\"\"\n                     SELECT  *, YEAR(review_date) AS YEAR, MONTH(review_date) AS MONTH,\n                             CASE WHEN DAY(review_date) BETWEEN 1 AND 10 THEN '1_10'\n                                  WHEN DAY(review_date) BETWEEN 11 AND 20 THEN '11_20'\n                                  ELSE '21_31' END AS DAY\n                     FROM    part_03\n                     WHERE   YEAR(review_date) IN (2019, 2020, 2021)\n                 \"\"\")  \n                      \ndf_04 = spark.sql(\"\"\"\n                     SELECT  *, YEAR(review_date) AS YEAR, MONTH(review_date) AS MONTH,\n                             CASE WHEN DAY(review_date) BETWEEN 1 AND 10 THEN '1_10'\n                                  WHEN DAY(review_date) BETWEEN 11 AND 20 THEN '11_20'\n                                  ELSE '21_31' END AS DAY\n                     FROM    part_04\n                     WHERE   YEAR(review_date) IN (2019, 2020, 2021)\n                 \"\"\")           \n\ndf_total = df_01                    \ndf_total = df_total.union(df_02) \ndf_total = df_total.union(df_03) \ndf_total = df_total.union(df_04)",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-14T14:06:41+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 12,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689229627969_1913184089",
+      "id": "paragraph_1689229627969_1913184089",
+      "dateCreated": "2023-07-13T06:27:07+0000",
+      "dateStarted": "2023-07-14T14:06:41+0000",
+      "dateFinished": "2023-07-14T14:06:42+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:3532"
+    },
+    {
+      "text": "%md\n## 해당 SQL 결과",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-14T14:06:42+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h2>해당 SQL 결과</h2>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689319750233_354909131",
+      "id": "paragraph_1689319750233_354909131",
+      "dateCreated": "2023-07-14T07:29:10+0000",
+      "dateStarted": "2023-07-14T14:06:42+0000",
+      "dateFinished": "2023-07-14T14:06:42+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:3533"
+    },
+    {
+      "text": "%pyspark\ndf_01 = spark.sql(\"\"\"\n                     SELECT  *, YEAR(review_date) AS YEAR, MONTH(review_date) AS MONTH,\n                             CASE WHEN DAY(review_date) BETWEEN 1 AND 10 THEN '1_10'\n                                  WHEN DAY(review_date) BETWEEN 11 AND 20 THEN '11_20'\n                                  ELSE '21_31' END AS DAY\n                     FROM    part_01\n                     WHERE   YEAR(review_date) IN (2019, 2020, 2021)\n                 \"\"\").show()",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-14T14:06:42+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 12,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------+--------------------+--------------------+------+--------------------+-------------------+-----------+--------------------+-------+----+-----+----+\n|review_id|            reviewer|               movie|rating|      review_summary|        review_date|spoiler_tag|       review_detail|helpful|YEAR|MONTH| DAY|\n+---------+--------------------+--------------------+------+--------------------+-------------------+-----------+--------------------+-------+----+-----+----+\n|rw5704482|       raeldor-96879| After Life (2019– )|     9|Very Strong Season 2|2020-05-03 00:00:00|          0|I enjoyed the fir...|    1,1|2020|    5|1_10|\n|rw5704483|             dosleeb|The Valhalla Murd...|     6|Icelandic detecti...|2020-05-03 00:00:00|          0|I know Iceland is...|    2,2|2020|    5|1_10|\n|rw5704484|     brightconscious|Special OPS (2020– )|     7|     Nothing special|2020-05-03 00:00:00|          0|Except K K , no o...|    0,0|2020|    5|1_10|\n|rw5704485|          gasconyway|   #BlackAF (2020– )|     8|            Good but|2020-05-03 00:00:00|          0|I'm guessing that...|    5,9|2020|    5|1_10|\n|rw5704487|        mmason-15867|  The Droving (2020)|     2|    An honest review|2020-05-03 00:00:00|          0|Here's the truth....|  26,41|2020|    5|1_10|\n|rw5704488|   schroederagustavo|All About Eve (1950)|    10|             Amazing|2020-05-03 00:00:00|          0|Having seen this ...|    0,1|2020|    5|1_10|\n|rw5704489|             welhof1|Runaway Train (1985)|     7|Impressive action...|2020-05-03 00:00:00|          0|The movie had som...|    0,1|2020|    5|1_10|\n|rw5704490|             Evastar|Iron Fist (2017–2...|     9|Another great Net...|2020-05-03 00:00:00|          0|I loved it from t...|    7,9|2020|    5|1_10|\n|rw5704491|              tioeta|The Half of It (I...|     4|Needed the other ...|2020-05-03 00:00:00|          0|I see that Netfli...|  16,26|2020|    5|1_10|\n|rw5704492|       stephenrifkin| This Is Us (2016– )|     2|All the Pearsons ...|2020-05-03 00:00:00|          0|This is the show ...|    1,5|2020|    5|1_10|\n|rw5704494|    andrewtschroeder|  Closure (I) (2018)|     9|  Fun and intriguing|2020-05-03 00:00:00|          0|This is a fun and...|    2,2|2020|    5|1_10|\n|rw5704493|      UniqueParticle|  Unstoppable (2010)|     8|Excellent last fi...|2020-05-03 00:00:00|          0|A suspenseful thr...|    3,4|2020|    5|1_10|\n|rw5704496|      Hellooo1234321|Dangerous Lies (2...|  null|             Not bad|2020-05-03 00:00:00|          0|Highlight was Cam...|    2,3|2020|    5|1_10|\n|rw5704497|        flippereight|Beastie Boys Stor...|     3|    The apology tour|2020-05-03 00:00:00|          0|A lot of excuses ...|   8,20|2020|    5|1_10|\n|rw5704500|         ovandoreyna|Ruben Brandt, Col...|    10|Magnificent art-a...|2020-05-03 00:00:00|          0|A fenomel animati...|    0,1|2020|    5|1_10|\n|rw5704499|              Pairic|Some Kind of Hate...|     7|     Vengeful Spirit|2020-05-03 00:00:00|          0|Some Kind Of Hate...|    1,2|2020|    5|1_10|\n|rw5704501|      driftingintime|    Cube Zero (2004)|    10|       NOT FOR KIDS!|2020-05-03 00:00:00|          0|I actually liked ...|    0,2|2020|    5|1_10|\n|rw5704502|Stay_away_from_th...|        Carne (1991)|     8|Like watching Noe...|2020-05-03 00:00:00|          0|Well, I just fini...|    4,4|2020|    5|1_10|\n|rw5704504|               vostf|500 Days of Summe...|     5|Cutie indie, just...|2020-05-03 00:00:00|          0|Ah Indies done by...|    0,1|2020|    5|1_10|\n|rw5704503|          sharonrota|           8½ (1963)|    10|Maybe the biggest...|2020-05-03 00:00:00|          0|Everybody should ...|    2,3|2020|    5|1_10|\n+---------+--------------------+--------------------+------+--------------------+-------------------+-----------+--------------------+-------+----+-----+----+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://spark-master-01:4040/jobs/job?id=8",
+              "$$hashKey": "object:3881"
+            }
+          ],
+          "interpreterSettingId": "spark_yarn"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689319769553_749882062",
+      "id": "paragraph_1689319769553_749882062",
+      "dateCreated": "2023-07-14T07:29:29+0000",
+      "dateStarted": "2023-07-14T14:06:42+0000",
+      "dateFinished": "2023-07-14T14:06:43+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:3534"
+    },
+    {
+      "text": "%md\n# 데이터를 파티셔닝하여 HDFS에 업로드",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-14T14:06:43+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h1>데이터를 파티셔닝하여 HDFS에 업로드</h1>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689319858075_1257353512",
+      "id": "paragraph_1689319858075_1257353512",
+      "dateCreated": "2023-07-14T07:30:58+0000",
+      "dateStarted": "2023-07-14T14:06:43+0000",
+      "dateFinished": "2023-07-14T14:06:43+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:3535"
+    },
+    {
+      "text": "%pyspark\ndf_total.coalesce(1).write \\\n                    .option(\"header\",True) \\\n                    .partitionBy(\"YEAR\", \"MONTH\", \"DAY\") \\\n                    .mode(\"overwrite\") \\\n                    .json(\"hdfs://spark-master-01:9000/skybluelee/movie-partitioned-json\")",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-14T14:06:43+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 12,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://spark-master-01:4040/jobs/job?id=9",
+              "$$hashKey": "object:3905"
+            }
+          ],
+          "interpreterSettingId": "spark_yarn"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689234405127_1306814780",
+      "id": "paragraph_1689234405127_1306814780",
+      "dateCreated": "2023-07-13T07:46:45+0000",
+      "dateStarted": "2023-07-14T14:06:43+0000",
+      "dateFinished": "2023-07-14T14:08:03+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:3536"
+    },
+    {
+      "text": "%pyspark\ndf_total.show()",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-14T15:05:34+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 12,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------+--------------------+--------------------+------+--------------------+-------------------+-----------+--------------------+-------+----+-----+----+\n|review_id|            reviewer|               movie|rating|      review_summary|        review_date|spoiler_tag|       review_detail|helpful|YEAR|MONTH| DAY|\n+---------+--------------------+--------------------+------+--------------------+-------------------+-----------+--------------------+-------+----+-----+----+\n|rw5704482|       raeldor-96879| After Life (2019– )|     9|Very Strong Season 2|2020-05-03 00:00:00|          0|I enjoyed the fir...|    1,1|2020|    5|1_10|\n|rw5704483|             dosleeb|The Valhalla Murd...|     6|Icelandic detecti...|2020-05-03 00:00:00|          0|I know Iceland is...|    2,2|2020|    5|1_10|\n|rw5704484|     brightconscious|Special OPS (2020– )|     7|     Nothing special|2020-05-03 00:00:00|          0|Except K K , no o...|    0,0|2020|    5|1_10|\n|rw5704485|          gasconyway|   #BlackAF (2020– )|     8|            Good but|2020-05-03 00:00:00|          0|I'm guessing that...|    5,9|2020|    5|1_10|\n|rw5704487|        mmason-15867|  The Droving (2020)|     2|    An honest review|2020-05-03 00:00:00|          0|Here's the truth....|  26,41|2020|    5|1_10|\n|rw5704488|   schroederagustavo|All About Eve (1950)|    10|             Amazing|2020-05-03 00:00:00|          0|Having seen this ...|    0,1|2020|    5|1_10|\n|rw5704489|             welhof1|Runaway Train (1985)|     7|Impressive action...|2020-05-03 00:00:00|          0|The movie had som...|    0,1|2020|    5|1_10|\n|rw5704490|             Evastar|Iron Fist (2017–2...|     9|Another great Net...|2020-05-03 00:00:00|          0|I loved it from t...|    7,9|2020|    5|1_10|\n|rw5704491|              tioeta|The Half of It (I...|     4|Needed the other ...|2020-05-03 00:00:00|          0|I see that Netfli...|  16,26|2020|    5|1_10|\n|rw5704492|       stephenrifkin| This Is Us (2016– )|     2|All the Pearsons ...|2020-05-03 00:00:00|          0|This is the show ...|    1,5|2020|    5|1_10|\n|rw5704494|    andrewtschroeder|  Closure (I) (2018)|     9|  Fun and intriguing|2020-05-03 00:00:00|          0|This is a fun and...|    2,2|2020|    5|1_10|\n|rw5704493|      UniqueParticle|  Unstoppable (2010)|     8|Excellent last fi...|2020-05-03 00:00:00|          0|A suspenseful thr...|    3,4|2020|    5|1_10|\n|rw5704496|      Hellooo1234321|Dangerous Lies (2...|  null|             Not bad|2020-05-03 00:00:00|          0|Highlight was Cam...|    2,3|2020|    5|1_10|\n|rw5704497|        flippereight|Beastie Boys Stor...|     3|    The apology tour|2020-05-03 00:00:00|          0|A lot of excuses ...|   8,20|2020|    5|1_10|\n|rw5704500|         ovandoreyna|Ruben Brandt, Col...|    10|Magnificent art-a...|2020-05-03 00:00:00|          0|A fenomel animati...|    0,1|2020|    5|1_10|\n|rw5704499|              Pairic|Some Kind of Hate...|     7|     Vengeful Spirit|2020-05-03 00:00:00|          0|Some Kind Of Hate...|    1,2|2020|    5|1_10|\n|rw5704501|      driftingintime|    Cube Zero (2004)|    10|       NOT FOR KIDS!|2020-05-03 00:00:00|          0|I actually liked ...|    0,2|2020|    5|1_10|\n|rw5704502|Stay_away_from_th...|        Carne (1991)|     8|Like watching Noe...|2020-05-03 00:00:00|          0|Well, I just fini...|    4,4|2020|    5|1_10|\n|rw5704504|               vostf|500 Days of Summe...|     5|Cutie indie, just...|2020-05-03 00:00:00|          0|Ah Indies done by...|    0,1|2020|    5|1_10|\n|rw5704503|          sharonrota|           8½ (1963)|    10|Maybe the biggest...|2020-05-03 00:00:00|          0|Everybody should ...|    2,3|2020|    5|1_10|\n+---------+--------------------+--------------------+------+--------------------+-------------------+-----------+--------------------+-------+----+-----+----+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://spark-master-01:4040/jobs/job?id=10",
+              "$$hashKey": "object:3922"
+            }
+          ],
+          "interpreterSettingId": "spark_yarn"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689319098771_14289252",
+      "id": "paragraph_1689319098771_14289252",
+      "dateCreated": "2023-07-14T07:18:18+0000",
+      "dateStarted": "2023-07-14T15:05:34+0000",
+      "dateFinished": "2023-07-14T15:05:35+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:3537"
+    },
+    {
+      "text": "%pyspark\n",
+      "user": "anonymous",
+      "dateUpdated": "2023-07-14T15:05:34+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1689347134439_544638807",
+      "id": "paragraph_1689347134439_544638807",
+      "dateCreated": "2023-07-14T15:05:34+0000",
+      "status": "READY",
+      "$$hashKey": "object:3538"
+    }
+  ],
+  "name": "movie_data_analysis",
+  "id": "2J7GWTDXS",
+  "defaultInterpreterGroup": "spark_yarn",
+  "version": "0.10.1",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/movie_data_analysis"
+}
