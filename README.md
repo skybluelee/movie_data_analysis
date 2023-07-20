@@ -71,7 +71,7 @@ streaming 방식은 Structured Streaming이며 위의 요소를 참고하여 bat
 
 Kafka에서 readStream으로 읽은 dataframe을 MongoDB에 json 형태로 정확하게 전송하기 위해서는 해당 dataframe을 json 형태로 parsing 하는 과정이 필요. 만약 parsing하지 않는다면 `value: ""a": 1, "b": "id""`와 같이 json 형태의 하나의 string으로 전송될 가능성이 존재.
 
-<img src="https://github.com/skybluelee/movie_data_analysis/assets/107929903/f1c845fc-bca5-4e06-84ac-4900fa8f4dc1.png" width="1000" height="600"/>
+<img src="https://github.com/skybluelee/movie_data_analysis/assets/107929903/f1c845fc-bca5-4e06-84ac-4900fa8f4dc1.png" width="1000" height="700"/>
 
 Atlas에 들어가서 Browse Collections를 누르면 해당 database의 collection에서 데이터를 조회할 수 있고 `{field: 'value'}` 형태의 쿼리를 날릴 수 있음.
 
