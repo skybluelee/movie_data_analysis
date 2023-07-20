@@ -70,6 +70,7 @@ streaming 방식은 Structured Streaming이며 위의 요소를 참고하여 bat
 [Structured Streaming with MongoDB](https://www.mongodb.com/docs/spark-connector/current/structured-streaming/)에 Spark를 사용하여 MongoDB로 writeStream하는 방식이 나와있다.
 
 Kafka에서 readStream으로 읽은 dataframe을 MongoDB에 json 형태로 정확하게 전송하기 위해서는 해당 dataframe을 json 형태로 parsing 하는 과정이 필요. 만약 parsing하지 않는다면 `value: ""a": 1, "b": "id""`와 같이 json 형태의 하나의 string으로 전송될 가능성이 존재.
+
 ### MongoDB to Tableau
 [How to Connect Tableau with MongoDB](https://www.mongodb.com/features/mongodb-tableau)를 참고하여 따라하면 `MongoDB Atlas X MongoDB`가 추가되는데, uri, id, password만으로 간편하게 연동할 수 있음.
 <img src="https://github.com/skybluelee/movie_data_analysis/assets/107929903/6f2f45f5-cc19-4d65-a657-9397c1cbfd2d.png" width="1000" height="600"/>
