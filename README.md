@@ -66,6 +66,7 @@ Producer의 경우 python을 사용하여 각 데이터를 전송하였으며, C
 
 streaming 방식은 Structured Streaming이며 위의 요소를 참고하여 batch size, acks, retries, partition 등의 parameter를 조절하며 최적화를 진행해야 함.
 ### Consumer to MongoDB
+<img src="https://github.com/skybluelee/movie_data_analysis/assets/107929903/9df0ddb7-1d54-4bf7-adac-52ffd5fe2407.png" width="800" height="500"/>
 이후 사용할 Tableau와 연동을 위해 보다 간편한 MongoDB Atlas를 사용.
 [Structured Streaming with MongoDB](https://www.mongodb.com/docs/spark-connector/current/structured-streaming/)에 Spark를 사용하여 MongoDB로 writeStream하는 방식이 나와있다.
 
