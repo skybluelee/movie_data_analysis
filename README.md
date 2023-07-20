@@ -64,13 +64,18 @@ Producer의 경우 python을 사용하여 각 데이터를 전송하였으며, C
 ### Streaming
 <img src="https://github.com/skybluelee/movie_data_analysis/assets/107929903/2e48574c-6134-4d89-b085-abae854144aa.png" width="800" height="1000"/>
 
-streaming 방식은 Structured Streaming이며 위의 요소를 참고하여 batch size, acks, retries, partition 등의 parameter를 조절하며 최적화를 진행해야 한다.
+streaming 방식은 Structured Streaming이며 위의 요소를 참고하여 batch size, acks, retries, partition 등의 parameter를 조절하며 최적화를 진행해야 함.
 ### Consumer to MongoDB
 이후 사용할 Tableau와 연동을 위해 보다 간편한 MongoDB Atlas를 사용.
 [Structured Streaming with MongoDB](https://www.mongodb.com/docs/spark-connector/current/structured-streaming/)에 Spark를 사용하여 MongoDB로 writeStream하는 방식이 나와있다.
 
 Kafka에서 readStream으로 읽은 dataframe을 MongoDB에 json 형태로 정확하게 전송하기 위해서는 해당 dataframe을 json 형태로 parsing 하는 과정이 필요. 만약 parsing하지 않는다면 `value: ""a": 1, "b": "id""`와 같이 json 형태의 하나의 string으로 전송될 가능성이 존재.
 
+<img src="https://github.com/skybluelee/movie_data_analysis/assets/107929903/f1c845fc-bca5-4e06-84ac-4900fa8f4dc1.png" width="1000" height="600"/>
+
+Atlas에 들어가서 Browse Collections를 누르면 해당 database의 collection에서 데이터를 조회할 수 있고 `{field: 'value'}` 형태의 쿼리를 날릴 수 있음.
+
+Connect에서 driver를 클릭하면 uri를 확인할 수 있고 Atlas SQL에서 기타 BI Tool와 연동이 가능, Shell 에서는 최신 MongoDB를 설치한 CMD에서 기존 MongoDB와 같이 쿼리를 날리는 것이 가능.
 ### MongoDB to Tableau
 [How to Connect Tableau with MongoDB](https://www.mongodb.com/features/mongodb-tableau)를 참고하여 따라하면 `MongoDB Atlas X MongoDB`가 추가되는데, uri, id, password만으로 간편하게 연동할 수 있음.
 
@@ -78,11 +83,11 @@ Kafka에서 readStream으로 읽은 dataframe을 MongoDB에 json 형태로 정�
 
 테이블을 연결하면 아래와 같이 필드와 테이블이 존재. 간혹 Tableau가 제대로 데이터를 불러오지 못하는 경우가 존재하는데, 본인 Database에 문제가 없다면 시간의 여유를 가지고 기다려보자.
 
-데이터가 load되었음을 확인하면 시트로 들어가서 시각화가 가능하다. 
+데이터가 load되었음을 확인하면 시트로 들어가서 시각화가 가능. 
 
 <img src="https://github.com/skybluelee/movie_data_analysis/assets/107929903/4573dd10-433f-426e-a5ca-688e26fc8407.png" width="1000" height="300"/>
 
-좌측의 테이블에서 사용하고자 하는 데이터를 행과 열로 옮겨 데이터를 시각화할 수 있다. 처음에는 단순 표만 나오는데 우측 상단의 '표현 방식'을 이용해 다양한 지표로 바꾸어 사용 가능하다.
-DESC, ASC 정렬이 가능하고 행 또는 열의 데이터를 더블 클릭하면 해당 데이터에 대해 집계 함수 사용이 가능하다.
+좌측의 테이블에서 사용하고자 하는 데이터를 행과 열로 옮겨 데이터를 시각화할 수 있음. 처음에는 단순 표만 나오는데 우측 상단의 '표현 방식'을 이용해 다양한 지표로 바꾸어 사용 가능.
+DESC, ASC 정렬이 가능하고 행 또는 열의 데이터를 더블 클릭하면 해당 데이터에 대해 집계 함수 사용 가능.
 
-데이터를 연동하는 경우 Tableau는 모든 데이터를 Database에서 가지고 온다. 나의 경우 데이터가 별로 없는 초기에는 데이터를 가지고 오는 시간이 적어 데이터의 변화를 실시간으로 확인이 가능했으나, 데이터의 양이 많아지면서 실시간으로 확인하는 것이 불가능했고 프로그램도 무거워져 시트를 조작하는데 상당한 시간이 소요되었다. 필요한 데이터만을 가지고 오는 것이 필요하다.
+데이터를 연동하는 경우 Tableau는 모든 데이터를 Database에서 가지고 옴. 나의 경우 데이터가 별로 없는 초기에는 데이터를 가지고 오는 시간이 적어 데이터의 변화를 실시간으로 확인이 가능했으나, 데이터의 양이 많아지면서 실시간으로 확인하는 것이 불가능했고 프로그램도 무거워져 시트를 조작하는데 상당한 시간이 소요. 필요한 데이터만을 가지고 오는 것이 필요.
