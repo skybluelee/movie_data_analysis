@@ -6,6 +6,8 @@
   - [데이터 선정](#데이터-선정)
   - [원본 데이터 분석](#원본-데이터-분석)
   - [실시간 ETL 구축](#실시간-ETL-구축)
+  - [Streaming](#Streaming)
+  - [Consumer to MongoDB](#Consumer-to-MongoDB)
 
 ## **개요**
 
@@ -59,4 +61,11 @@ Producer의 경우 python을 사용하여 각 데이터를 전송하였으며, C
 
 2가지 방식은 kafka 디렉토리에 작성.
 ### Streaming
-<img src="https://github.com/skybluelee/movie_data_analysis/assets/107929903/2e48574c-6134-4d89-b085-abae854144aa.png" width="1000" height="1000"/>
+<img src="https://github.com/skybluelee/movie_data_analysis/assets/107929903/2e48574c-6134-4d89-b085-abae854144aa.png" width="800" height="1000"/>
+
+streaming 방식은 Structured Streaming이며 위의 요소를 참고하여 batch size, acks, retries, partition 등의 parameter를 조절하며 최적화를 진행해야 한다.
+### Consumer to MongoDB
+이후 사용할 Tableau와 연동을 위해 보다 간편한 MongoDB Atlas를 사용.
+[Structured Streaming with MongoDB](https://www.mongodb.com/docs/spark-connector/current/structured-streaming/)에 Spark를 사용하여 MongoDB로 writeStream하는 방식이 나와있다.
+
+Kafka에서 readStream으로 읽은 dataframe을 MongoDB에 json 형태로 정확하게 전송하기 위해서는 해당 dataframe을 
