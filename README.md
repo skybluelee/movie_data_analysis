@@ -4,6 +4,8 @@
 - [개요](#개요)
 - [프로젝트 상세](#프로젝트-상세)
   - [데이터 선정](#데이터-선정)
+  - [원본 데이터 분석](#-원본 데이터 분석)
+  - [실시간 ETL 구축](#-실시간 ETL 구축)
 
 ## **개요**
 
@@ -39,3 +41,7 @@ Kafka producer가 consumer로 전송할 데이터를 영화 리뷰 데이터로 
 모든 데이터에서 년, 월, 일(10일 단위)로 파티셔닝한 상태로 저장.
 
 ### 실시간 ETL 구축
+zookeeper와 kafka를 설치하고 `kafka/config` 내의 `zookeeper.properties, server.properties`에서 자신이 사용할 인스턴스를 전부 등록.
+이후 `nohup_zookeeper.out &, nohup_kafka.out &` 명령을 사용하여 zookeeper, kafka를 실행.
+`jps` 명령을 통해 `QuorumPeerMain`, `kafka`가 동작 중인지 확인 필요. 이유 없이 exit 상태가 되는 경우가 자주 있는데, 사용하는 인스턴스에서 전부 동작중인 상태에서 스트리밍 구현 가능.
+
