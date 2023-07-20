@@ -19,7 +19,7 @@
 >
 > **주요 기능:** 실시간 데이터 파이프라인 구축, 데이터 분석
 >
-> **사용 기술:** Python, Spark, Kafka
+> **사용 기술:** Python, Spark, Kafka, AWS, MongDB Atlas, Tableau, Zeppelin
 
 ## **프로젝트 상세**
 프로젝트 진행 과정에 대한 설명
@@ -42,6 +42,20 @@ Kafka producer가 consumer로 전송할 데이터를 영화 리뷰 데이터로 
 
 ### 실시간 ETL 구축
 zookeeper와 kafka를 설치하고 `kafka/config` 내의 `zookeeper.properties, server.properties`에서 자신이 사용할 인스턴스를 전부 등록.
+
 이후 `nohup_zookeeper.out &, nohup_kafka.out &` 명령을 사용하여 zookeeper, kafka를 실행.
+
 `jps` 명령을 통해 `QuorumPeerMain`, `kafka`가 동작 중인지 확인 필요. 이유 없이 exit 상태가 되는 경우가 자주 있는데, 사용하는 인스턴스에서 전부 동작중인 상태에서 스트리밍 구현 가능.
 
+`--create --topic`을 통해 topic을 생성하고 `kafka-console-producer.sh`, `kafka-console-consumer.sh` 명령을 통해 실시간 스트리밍을 구현.
+
+<img src="https://github.com/skybluelee/movie_data_analysis/assets/107929903/fa74b9bc-c6d1-4480-ae75-6373b6fc07e3.png" width="900" height="260"/>
+
+producer가 topic을 향해 데이터를 전송하는 경우, 그리고 consumer가 topic의 데이터를 받는 경우 Python을 사용해 kafka 모듈의 KafkaProducer, KafkaConsumer를 사용하는 경우와 pyspark를 사용해 writeStream, readStream을 사용하는 경우 2가지가 존재.
+
+Spark를 사용하는 경우 writeStream과 readStream을 사용하기 위해서는 기존의 dataframe을 streaming dataframe으로 변환해야 함.
+
+Producer의 경우 python을 사용하여 각 데이터를 전송하였으며, Consumer의 경우 이미 topic으로 들어오는 데이터 자체가 streaming dataframe이므로 readStream을 통해 데이터를 읽음.
+
+2가지 방식은 kafka 디렉토리에 작성.
+### Consume
