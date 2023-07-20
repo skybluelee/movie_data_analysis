@@ -30,7 +30,7 @@ Kafka producer가 consumer로 전송할 데이터를 영화 리뷰 데이터로 
 데이터는 Kaggle의 [IMDb Review Dataset](https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset)을 사용.
 
 ### 원본 데이터 분석
-<img src="https://github.com/skybluelee/movie_data_analysis/assets/107929903/55e3a877-7702-4f2d-8057-e4eac6312730.png" width="850" height="300"/>
+<img src="https://github.com/skybluelee/movie_data_analysis/assets/107929903/55e3a877-7702-4f2d-8057-e4eac6312730.png" width="850" height="450"/>
 
 영화 데이터는 6개의 json file로 구성되며 각 파일의 연도는 위와 같다.
 
