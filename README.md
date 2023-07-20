@@ -78,7 +78,7 @@ Kafka에서 readStream으로 읽은 dataframe을 MongoDB에 json 형태로 정�
 테이블을 연결하면 아래와 같이 필드와 테이블이 존재. 간혹 Tableau가 제대로 데이터를 불러오지 못하는 경우가 존재하는데, 본인 Database에 문제가 없다면 시간의 여유를 가지고 기다려보자.
 
 데이터가 load되었음을 확인하면 시트로 들어가서 시각화가 가능하다. 
-<img src="https://github.com/skybluelee/movie_data_analysis/assets/107929903/4573dd10-433f-426e-a5ca-688e26fc8407.png" width="1000" height="600"/>
+<img src="https://github.com/skybluelee/movie_data_analysis/assets/107929903/4573dd10-433f-426e-a5ca-688e26fc8407.png" width="1000" height="400"/>
 
 좌측의 테이블에서 사용하고자 하는 데이터를 행과 열로 옮겨 데이터를 시각화할 수 있다. 처음에는 단순 표만 나오는데 우측 상단의 '표현 방식'을 이용해 다양한 지표로 바꾸어 사용 가능하다.
 DESC, ASC 정렬이 가능하고 행 또는 열의 데이터를 더블 클릭하면 해당 데이터에 대해 집계 함수 사용이 가능하다.
