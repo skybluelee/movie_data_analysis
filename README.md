@@ -49,7 +49,7 @@ zookeeper와 kafka를 설치하고 `kafka/config` 내의 `zookeeper.properties, 
 
 `--create --topic`을 통해 topic을 생성하고 `kafka-console-producer.sh`, `kafka-console-consumer.sh` 명령을 통해 실시간 스트리밍을 구현.
 
-<img src="https://github.com/skybluelee/movie_data_analysis/assets/107929903/fa74b9bc-c6d1-4480-ae75-6373b6fc07e3.png" width="900" height="600"/>
+<img src="https://github.com/skybluelee/movie_data_analysis/assets/107929903/fa74b9bc-c6d1-4480-ae75-6373b6fc07e3.png" width="900" height="1000"/>
 
 producer가 topic을 향해 데이터를 전송하는 경우, 그리고 consumer가 topic의 데이터를 받는 경우 Python을 사용해 kafka 모듈의 KafkaProducer, KafkaConsumer를 사용하는 경우와 pyspark를 사용해 writeStream, readStream을 사용하는 경우 2가지가 존재.
 
