@@ -58,4 +58,5 @@ Spark를 사용하는 경우 writeStream과 readStream을 사용하기 위해서
 Producer의 경우 python을 사용하여 각 데이터를 전송하였으며, Consumer의 경우 이미 topic으로 들어오는 데이터 자체가 streaming dataframe이므로 readStream을 통해 데이터를 읽음.
 
 2가지 방식은 kafka 디렉토리에 작성.
-### Consume
+### Streaming
+<img src="https://github.com/skybluelee/movie_data_analysis/assets/107929903/2e48574c-6134-4d89-b085-abae854144aa.png" width="1000" height="1000"/>
